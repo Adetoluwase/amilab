@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "UTF-8">
+		<meta name="description" content="AMI LAB">
+		<meta name = "author" content = "Juwonlo">
+		<meta name= "keywords" content="AMI, coffee, UdeS">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AMI LAB</title>
+		<link rel="stylesheet" type="text/css" href="css/amistyle.css">
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+		<script src="form.js"></script>
+	</head>
+
+	<body>
+
+		<header id="main-header">
+			<div class = "container">
+				<h1>AMI LAB TEA-M </h1>
+			</div>
+		</header>
+
+		<nav id="navbar">
+			<div class = "container">
+				<ul>
+					<li><a href="login.html"> Home </a></li>
+					<li><a href="https://ami.usherbrooke.ca/welcome/en-team/phd-msc-students/"> About </a></li>
+					<li><a href="https://ami.usherbrooke.ca"> Contact </a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<section class="container">
+	      <form class="my-form">
+	        <h1>Sign Up</h1>
+	        <div class="msg"></div>
+	        <div>
+	          <label for="name">Name:</label>
+	          <input type="text" name="name" id="name">
+	        
+	          <label for="cip">CIP:</label>
+	          <input type="email" name="email" id="email">
+
+	          <label for= "password">Student Number: </label>
+	          <input type = "password" name="password" id="password" />
+			</div>
+
+			<button onclick="signUp()" class="button">Sign Up</button>
+
+	        <!-- <button class= "button" type="submit" value="Submit"> Submit </button> -->
+	      </form>
+		
+
+		<footer id= "main-footer">
+			<p>Copyright &copy; Juwonlo 2021</p>
+		</footer>
+
+				<!-- The core Firebase JS SDK is always required and must be listed first -->
+		
+
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+
+		
+
+	</body>
+</html>

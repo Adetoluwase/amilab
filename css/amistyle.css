@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+
+body {
+  background-color: #f4f4f4;
+  color: #555;
+  /* font-family: Lora, Helvetica, sans-serif; */
+  font-size: 16px;
+  line-height: 1.6em;
+  margin: 0;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 72px;
+  min-height: 100vh;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+header {
+  background-color: green;
+  color: #fff;
+  padding: 8px;
+  text-align: left;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  padding: 30px 20px;
+  align-items: center;
+}
+
+#navbar {
+  background-color: #333;
+  color: #fff;
+  text-align: end;
+}
+
+#navbar ul {
+  padding: 1rem;
+  list-style: none;
+  margin: 0;
+}
+#navbar li {
+  display: inline;
+}
+
+#navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding-right: 40px;
+  font-weight: 600;
+}
+
+h2 {
+  text-align: center;
+  color: green;
+  font-size: 32px;
+  line-height: 1.6em;
+  padding-top: 10px;
+}
+
+#main {
+  float: center;
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.teabutton button {
+  border: none;
+  padding: 2rem;
+  height: 9rem;
+  width: 10rem;
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.teabutton img {
+  width: 43px;
+}
+
+.teabutton button span {
+  display: block;
+  font-size: 24px;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.teabutton button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.teabutton:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.teabutton button:hover {
+  background-color: #e4f5e9;
+}
+
+.image {
+  display: inline-block;
+  align-content: center;
+  justify-content: center;
+}
+
+/*.mylist a{
+	text-align:left;
+	color:green;
+	text-decoration:none;
+	font-size:18px;
+	padding-right: 0px;
+}
+.mylist ul{	
+	list-style-type:none;
+}
+.mylist li{	
+	list-style-type:none;
+	list-style-image: url('../images/teacheck.jpg');
+}*/
+
+/*#sidebar{
+	float: right;
+	width: 40%;
+	background: #333;
+	color:#fff;
+	padding:10px;
+	box-sizing:border-box;
+}
+*/
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+    float: none;
+  }
+  /*#sidebar{
+		width: 100%;
+		float:none;
+	}*/
+}
+
+/* ------------------------------------ */
+
+.my-form {
+  padding: 2rem;
+  background: #f4f4f4;
+  margin-left: auto;
+  margin-right: auto;
+  width: 29rem;
+  margin-top: 3rem;
+  border-radius: 6px;
+  margin-bottom: 3em;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  height: 40px;
+  display: block;
+}
+
+.button {
+  display: block;
+  width: 75px;
+  padding: 10px 10px;
+  border: 0;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #444;
+}
+
+.drinkbutton button {
+  display: block;
+  width: 75px;
+  height: 50px;
+  background: #333; /* Green background */
+  border: 0; /* Green border */
+  color: #fff; /* White text */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  padding: 10px 10px;
+  margin-right: 15px;
+}
+
+/* Clear floats (clearfix hack) */
+.drinkbutton:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.drinkbutton button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.drinkbutton button:hover {
+  background: #444;
+}
+
+#signout {
+  position: absolute;
+  right: 15px;
+  bottom: 75px;
+  display: block;
+  width: 75px;
+  padding: 10px 15px;
+  border: 0;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+#signout:hover {
+  background: #444;
+}
+
+.drinks {
+  padding: 20px;
+}
+
+.searchButton {
+  width: 75px;
+  padding: 10px 10px;
+}
+
+.loader {
+  border: 2px solid #f3f3f3; /* Light grey */
+  border-top: 2px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: spin 2s linear infinite;
+  padding: 0px;
+  margin: 0px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Login Page */
+
+.login-button {
+  margin-top: 25px;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 0;
+}
+
+.link-register {
+  font-size: 13px;
+}
+
+/* Add Drinks Page*/
+
+.drink-form {
+  padding: 2rem;
+}
+
+.drink-form h4 {
+  font-weight: 600;
+}
+
+.drink-form h6 {
+  color: #b9b9b9;
+  font-size: 12px;
+  margin-bottom: 2rem;
+}
+
+.drink-form button {
+  background: none;
+  border: 1px solid #79a78b;
+  color: #4e4141;
+  margin-top: 10px;
+}
+
+.drinks .list {
+  padding: 2rem;
+}
