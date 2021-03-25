@@ -380,8 +380,12 @@ input {
   font-size: 14px;
   padding: 0 13px;
   border-radius: 5px;
-  color: #59696a;
+  color: #e43a68;
   background: none;
+}
+
+#editDrinkBtn {
+  color: #260098;
 }
 
 .delete:hover {
