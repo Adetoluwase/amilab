@@ -239,7 +239,7 @@ async function createDrink() {
   const drinkprice = document.getElementById('drinkprice').value
   const description = document.getElementById('description').value
   document.getElementById('savedrinkbtn').innerHTML =
-  '<center> <p class="loader"></p> </center>'
+    '<center> <p class="loader"></p> </center>'
   if (!drinkname || Number(drinkprice) <= 0) {
     return alert('Please fill the form appropriately.')
   }
@@ -285,6 +285,23 @@ async function getAllDrinks(admin) {
         drinksTable += '</tr>'
       }
       document.getElementById('drinks-list').innerHTML = drinksTable
+    } else {
+      let drinksRender = ''
+      for (const DRINK of allDrinks) {
+        drinksRender += "<div class ='drink'>"
+        drinksRender +=
+          "<div class ='img'>" +
+          "<img src='../images/ice-tea.png' alt='drink' class='drink-img'/>" +
+          '</div>'
+        drinksRender +=
+          "<div class ='info'>" +
+          `<p class="drink-name">${DRINK.drinkname}</p>` +
+          `<p class="drink-price">$${DRINK.drinkprice}</p>` +
+          `<button class="order-btn" id='${DRINK.id}'  onclick={orderDrink("${DRINK.id}")}> Order Drink </button>` +
+          '</div>'
+        drinksRender += '</div>'
+      }
+      document.getElementById('customer-drinks').innerHTML = drinksRender
     }
   } catch (e) {
     console.log('Error getting documents: ', e)
@@ -381,5 +398,57 @@ async function editDrink() {
     document.getElementById('savechanges').innerHTML = 'Save Changes'
     alert('Sorry, operation edit drink failed. Please try again later.')
     document.getElementById('closemodal').click()
+  }
+}
+
+async function orderDrink(drinkId) {
+  const drinks = JSON.parse(localStorage.getItem('drinks'))
+  const selectedDrink = drinks.find((x) => x.id === drinkId)
+  const price = Number(selectedDrink.drinkprice)
+  const user = JSON.parse(localStorage.getItem('user'))
+  if (price > user.money) {
+    return alert(
+      'Insufficent Balance. You cannot order this drink. Please contact the admin to help recharge your account or order a drink with lesser price.',
+    )
+  }
+  const x = document.getElementsByClassName('order-btn')
+  for (item of x) {
+    item.disabled = true
+  }
+  document.getElementById(drinkId).innerHTML =
+    '<center> <p class="loader"></p> </center>'
+  try {
+    //create a transactions collection
+    const transactions = await firestore.collection('transactions').get()
+    const transactionsLength = transactions.docs.length
+    await firestore
+      .collection('transactions')
+      .doc()
+      .set({
+        transactionRef: `T-${transactionsLength}`,
+        customer: user.email,
+        order: selectedDrink.drinkname,
+        orderedOn: new Date(),
+      })
+    const newUserBalance = Number(user.money) - Number(selectedDrink.drinkprice)
+    await firestore
+      .collection('users')
+      .doc(user._id)
+      .update({ money: newUserBalance })
+    user.money = newUserBalance
+    localStorage.setItem('user', JSON.stringify(user))
+    document.getElementById(
+      'balance',
+    ).innerHTML = `<ion-icon name="person-circle-outline" class = "user-icon"></ion-icon> $${newUserBalance}`
+    alert(
+      `Success. Your drink order T-${transactionsLength} has been placed. Enjoy your drink.`,
+    )
+  } catch (e) {
+    alert('Sorry, your order could not be processed. Please try again later.')
+  } finally {
+    document.getElementById(drinkId).innerHTML = 'Order Drink'
+    for (item of x) {
+      item.disabled = false
+    }
   }
 }

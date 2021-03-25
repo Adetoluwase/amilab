@@ -393,3 +393,120 @@ input {
   text-decoration: underline;
   outline: none;
 }
+
+.showcase {
+  font-family: "Fugaz One", cursive;
+  color: #4e4e4e;
+  font-weight: 500;
+  word-spacing: 0px;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.showcase .important {
+  font-weight: 700;
+  font-size: 32px;
+  color: #3c7168;
+}
+
+.drinks-user {
+  padding: 3rem;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.drinks-user .drink {
+  width: 17%;
+  background: #59696a1f;
+  border-radius: 7px;
+  box-shadow: 0 0px 3px 0 rgb(156 156 156 / 20%), 0 6px 20px 0 rgb(89 105 106 / 20%);
+  margin-bottom: 4rem;
+}
+
+.drinks-user .drink .img {
+  padding: 42px;
+  padding-bottom: 17px;
+  padding-top: 17px;
+}
+
+.drinks-user .drink .img .drink-img {
+  width: 100%;
+}
+
+.drinks-user .drink .img .drink-img:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+}
+
+.drinks-user .drink .info {
+  padding: 1rem;
+  background: white;
+  border-radius: inherit;
+}
+
+.drinks-user .drink .info .drink-name {
+  margin-top: 7px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 1px;
+  color: #59696a;
+  text-transform: capitalize;
+}
+
+.drinks-user .drink .info .drink-price {
+  font-weight: 400;
+  font-size: 17px;
+  color: #3c716882;
+  margin-bottom: 0;
+  margin-top: 2px;
+}
+
+.drinks-user .drink .order-btn {
+  margin-top: 8px;
+  border: none;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #59696a;
+  background: transparent;
+  border-radius: 6px;
+  color: #59696a;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 10px;
+  height: 35px;
+}
+
+.drinks-user .drink .order-btn:hover {
+  cursor: pointer;
+  background: #59696a;
+  color: white;
+  transition: background 1s;
+}
+
+.drinks-user .drink .order-btn:focus {
+  outline: none;
+}
+
+.order-btn:disabled,
+.order-btn[disabled] {
+  background-color: #cccccc !important;
+  color: #ffffff9e !important;
+  border: none !important;
+}
+
+.loading {
+  font-weight: 600;
+  color: #59696a;
+  text-transform: uppercase;
+}
+
+.select-text {
+  font-size: 16px;
+  margin-top: 1rem;
+}
